@@ -1,0 +1,39 @@
+type Persona {
+    id: ID!,
+    nombre: String,
+    estado:String,
+
+}
+type Condominio {
+    id: ID!,
+    nombre: String,
+    direccion:String,
+    cedulaJuri:String,
+    representante:String,
+    estado:Boolean,
+
+}
+type Query {
+    personas(count: Int):[Persona],
+    persona(id: ID): Persona,
+    condominios(count: Int):[Condominio]
+    condominio(id: ID):Condominio
+}
+type Mutation{
+    createPersona(nombre: String!,
+      ): Persona,
+    updatePersona(id: ID!
+        nombre:String,
+        estado:String
+      ):Persona,
+    createCondominio(nombre: String,
+        direccion:String,
+        cedulaJuri:String,
+        representante:String,
+        estado:Boolean,
+    ):Condominio,
+    agregarPersonaACondominio(idPersona:ID,
+    id: ID):Condominio
+}
+
+
